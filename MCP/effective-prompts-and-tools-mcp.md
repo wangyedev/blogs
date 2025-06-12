@@ -252,12 +252,8 @@ async function main() {
   const client = new SimpleMCPClient();
 
   try {
-    // Connect to filesystem server
-    await client.connect("npx", [
-      "-y",
-      "@modelcontextprotocol/server-filesystem",
-      "/tmp",
-    ]);
+    // Connect to our custom server with tools and prompts
+    await client.connect("node", ["server.js"]);
 
     // Example 1: Query that will use tools automatically
     console.log("\n📁 Example 1: Direct tool usage");
